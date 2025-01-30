@@ -1,0 +1,36 @@
+
+<form [formGroup]="regiaoForm" (ngSubmit)="salvar()">
+  <h2>{{ editMode ? 'Editar Região' : 'Cadastro de Região' }}</h2>
+  <div>
+    <label for="nome">Nome da região *</label>
+    <input id="nome" formControlName="nome" />
+    <div class="error" *ngIf="regiaoForm.get('nome')?.invalid && regiaoForm.get('nome')?.touched">
+      Digite o nome da região
+    </div>
+  </div>
+
+  <div formArrayName="cidades">
+    <h3>Locais da região</h3>
+    <div *ngFor="let cidade of cidades.controls; let i = index">
+      <app-seletor-cidade [control]="getFormControl(cidade.get('id'))" ></app-seletor-cidade>
+      <div class="error" *ngIf="cidade.get('cidade')?.invalid && cidade.get('cidade')?.touched">
+        A cidade é obrigatória.
+      </div>
+      <button type="button" (click)="removerCidade(i)">Remover</button>
+    </div>
+  </div>
+
+  <app-seletor-cidade [label]="false" (cidadeSelecionada)="cidadeSelecionada = $event"></app-seletor-cidade>
+  <div class="" *ngIf="regiaoForm.get('cidades')?.value.length === 0">
+    Adicione ao menos uma região
+  </div>
+  <div class="center">
+    <button type="button" [disabled]="cidadeSelecionada.id == '0' || cidadeSelecionada.id == ''" (click)="adicionarCidade()">Adicionar local</button>
+  </div>
+  
+
+  <div class="align-right">
+    <button type="button" (click)="cancelar()">Cancelar</button>
+    <button type="submit">{{ editMode ? 'Salvar Alterações' : 'Salvar' }}</button>
+  </div>
+</form>

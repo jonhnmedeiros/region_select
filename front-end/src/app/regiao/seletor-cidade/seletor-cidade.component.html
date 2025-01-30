@@ -1,0 +1,7 @@
+
+<ng-container *ngIf="label">
+    <label for="cidade">Cidade *</label>
+</ng-container>
+<select [formControl]="control" (change)="onSelect($event)" >
+    <option *ngFor="let cidade of cidades" [value]="cidade.id">{{ cidade.cidade }}</option>
+</select>

@@ -1,0 +1,33 @@
+<h2>Regiões</h2>
+<div class="space-between">
+  <button routerLink="/regioes/cadastro">Cadastrar</button>
+  <button (click)="exportarParaExcel()">Exportar</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome da região</th>
+      <th>Cidades</th>
+      <th>Status</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let regiao of regioes$ | async">
+      <td>{{ regiao.nome }}</td>
+      <td>
+        <span *ngFor="let cidade of regiao.cidades">
+          {{ obterCidadePorId(cidade.id)?.cidade }} ({{ obterCidadePorId(cidade.id)?.uf }})
+        </span>
+      </td>
+      <td>{{ regiao.ativa ? 'Ativa' : 'Inativa' }}</td>
+      <td>
+        <button [routerLink]="'/regioes/editar/' + regiao.id">Editar</button>
+        <button (click)="ativarOuDesativar(regiao.id)">
+          {{ regiao.ativa ? 'Desativar' : 'Ativar' }}
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,134 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: gray;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #0056b3;
+    font-weight: 400;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #0056b3
+}
+
+label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: 400;
+    color: gray;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #0056a4
+}
+
+option {
+    padding: 10px;
+}
+
+form {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background-color: #2a6bab5a;
+    color: rgba(25, 25, 112, 0.651);
+    padding: 10px;
+    font-weight: 400;
+    border: 1px solid #ccc;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-weight: 300;
+    color: #333;
+}
+
+thead {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+div {
+    margin-bottom: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.error {
+    color: red;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
