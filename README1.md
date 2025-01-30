@@ -23,19 +23,21 @@ Implementar um cadastro básico de regiões, basicamente um formulário composto
 Implementar uma forma de exportar a listagem do cadastro de regiões, preferencialmente em excel.
 
 ### Campos Requeridos
+
 - Nome
 - Cidades
-    - Cidade
-    - UF
+  - Cidade
+  - UF
 
 ### Requisitos
+
 - O campo nome é obrigatório
 - Não deve permitir cadastrar duas regiões com o mesmo nome
 - É obrigatório informar ao menos uma cidade na região
 - Não pode ser informada a mesma cidade duas ou mais vezes
 - Uma região pode ser desativada/ativada
 - O campo de cidade/uf deve ser um seletor (combobox)
-- Poder exportar os dados 
+- Poder exportar os dados
 
 # 1. Atividades Front-End
 
@@ -60,8 +62,8 @@ No front deve conter as seguintes operações:
 
 Na listagem de regiões devem ser listadas todas as regiões cadastradas e conter ações específicas
 
-
 ![Cadastro de Regiões](assets/referencia_listagem.png)
+
 > Imagem de referência para a listagem
 
 ### **Requisitos**
@@ -82,11 +84,12 @@ Na listagem de regiões devem ser listadas todas as regiões cadastradas e conte
 
 No cadastro você deve permitir que o usuário realize o cadastro de uma região, contendo os campos requeridos.
 
-
 ![Cadastro de Regiões](assets/referencia_cadastro.png)
+
 > Imagem de referência para o cadastro
 
 ### **Requisitos**
+
 - O campo nome é obrigatório
 - Não permitir cadastrar duas regiões com o mesmo nome
 - É obrigatório informar ao menos uma cidade na região
@@ -112,7 +115,7 @@ Implementar um componente Angular que represente o seletor de cidade
 ### **Requisitos**
 
 - Listar todas as cidades no formato de `select`
-- Refletir a cidade selecionada 
+- Refletir a cidade selecionada
 
 ### **Requisitos Técnicos**
 
@@ -129,22 +132,25 @@ Na pasta back-end já tem uma estrutura básica do projeto para começar, ele j�
 Como utilizamos Entity para este projeto vamos utitilizar o SQLite para facilitar.
 
 ## Requisitos
+
 - Implementar uma entidade região que contenha o nome e as cidades que compoem a região.
 - A entidade Região deverão ser persistida em duas tabelas Regiao e RegiaoCidade em uma relação `1..N`.
 - Implementar um RegiaoController que contenhas as operações de acordo com o verbo HTTP correspondente (`GET, POST, PUT`) que deverão chamar as respectivas ações do RegiaoService.
 - Implementar um RegiaoService que contenha as operações do CRUD (`List, Create, Update`) que deverão chamar as respectivas ações do RegiaoRepository
 - Implementar um Repository que contenham as operações de do CRUD (`List, Create, Update`) que deverão chamar as respectivas ações no Entity Framework
-- Service e Repository deverão ser instanciados via Dependecy Injection no lifetime apropriado 
+- Service e Repository deverão ser instanciados via Dependecy Injection no lifetime apropriado
 - Service e Repository deverão ter cada uma sua respectiva interface para uso e registro no Dependency Injection
 - Poder exportar os dados através de um endpoint específico
 
 ## Observações
+
 1. Caso não esteja habituado com o formato DDD procure referencia nos exemplos ou faça da forma que você julgar melhor (Priorizamos o formato DDD na avaliação).
 2. Fique a vontade para incluir mais operações que julgar necessário, mesmo que elas não estejam nos requisitos.
 3. Para simplificar abstraimos o AppService do DDD, caso queira implementar, será um diferencial.
 4. Quer fazer algo a mais? Seria um diferencial implementar por exemplo uma busca dos dados de Latitude e Longitude da cidade cadastrada pelas APIs do google ou do mapbox, buscando a chave para esse consumo do appsettings #FicaDica 😉
 
 ## Dicas
+
 1. O CORS necessita ser configurado no back para que se comunique corretamente com o front 😉
 2. Acha que pode melhorar alguma coisa que está implementada, vá em frente 😎
 3. Tem algum conhecimento extra que gostaria de demonstrar, a hora é agora 🏆
